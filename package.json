@@ -1,0 +1,43 @@
+{
+  "name": "semantic-ui-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "run-p watch:dev serve:dev",
+    "watch:dev": "webpack --watch",
+    "serve:dev": "nodemon -w dist dist/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "es6-promise": "^4.1.0",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.68.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.3",
+    "@types/es6-promise": "^0.0.32",
+    "@types/express": "^4.0.35",
+    "@types/node": "^7.0.18",
+    "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "ts-loader": "^2.0.3",
+    "tslint": "^5.2.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1",
+    "webpack-node-externals": "^1.5.4"
+  }
+}
