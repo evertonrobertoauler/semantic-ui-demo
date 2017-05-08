@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "run-p watch:dev serve:dev",
+    "start": "webpack && run-p watch:dev serve:dev",
     "watch:dev": "webpack --watch",
-    "serve:dev": "nodemon -w dist dist/server.js"
+    "serve:dev": "nodemon -w dist/server.js -w dist/public/browser.css dist/server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
