@@ -1,7 +1,10 @@
 import './browser.scss';
 import 'es6-promise';
+import 'isomorphic-fetch';
 import * as React from 'react';
 import { render } from 'react-dom';
+import { ApolloProvider, createNetworkInterface, ApolloClient } from 'react-apollo';
+import { BrowserRouter } from 'react-router-dom';
 import { App } from './app/app';
 
 // if (process.env.NODE_ENV !== 'production') {
@@ -14,6 +17,21 @@ import { App } from './app/app';
 //   };
 // }
 
-render(<App />, document.getElementById('root'), () => {
+const networkInterface = createNetworkInterface({ uri: `/graphql` });
+const client = new ApolloClient({
+  networkInterface,
+  initialState: (window as any).__APOLLO_STATE__,
+  ssrForceFetchDelay: 100,
+});
+
+const Main = () => (
+  <ApolloProvider client={client}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ApolloProvider>
+);
+
+render(<Main />, document.getElementById('root'), () => {
   console.log('rendered');
 });
